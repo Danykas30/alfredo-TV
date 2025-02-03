@@ -1,141 +1,82 @@
 <!DOCTYPE html>
 <html lang="lt">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfredo TV</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
-  </head>
-  <body>
-    <!-- Header Section -->
-    <header>
-      <div class="logo">
-        <h1>Alfredo TV</h1>
-        <p>Juokingos žinios tik jums!</p>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#home">Pradžia</a></li>
-          <li><a href="#about">Apie</a></li>
-          <li><a href="#contact">Kontaktai</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Main Section -->
-    <main>
-      <section id="home">
-        <h2>Welcome to Alfredo TV</h2>
-        <p>Your source for the funniest news!</p>
-        <button onclick="showMessage()">Learn More</button>
-      </section>
-
-      <section id="about">
-        <h2>About Us</h2>
-        <p>Alfredo TV is a comedy-driven platform, designed to bring joy to your day.</p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email us at: contact@alfredotv.com</p>
-      </section>
-    </main>
-
-    <!-- Footer Section -->
-    <footer>
-      <p>&copy; 2025 Alfredo TV. All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script> <!-- Link to JavaScript -->
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Alfredo TV</h1>
+        <p class="description">Pasirinkite kanalą ir mėgaukitės!</p>
+        <button class="subscribe-btn">Prenum
+/* Global styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark Grey background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-header {
-  background-color: #1a1a1a;
-  padding: 20px;
-  text-align: center;
+.container {
+    text-align: center;
 }
 
-header h1 {
-  font-size: 3em;
+.heading {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-header p {
-  font-size: 1.2em;
-  font-style: italic;
+.description {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 20px 0;
+/* Button Styles */
+.subscribe-btn {
+    padding: 15px 30px;
+    background-color: #f1c40f; /* Yellow button */
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.8s ease-in-out;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 15px;
+.subscribe-btn.visible {
+    opacity: 1; /* Visible when scroll down */
 }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.1em;
-  transition: color 0.3s;
+/* Animation when scrolling */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-nav ul li a:hover {
-  color: #ff6347; /* Tomato color on hover */
-}
+          // This script makes the button appear when scrolling down
+window.addEventListener('scroll', function() {
+    const button = document.querySelector('.subscribe-btn');
+    const scrollPosition = window.scrollY;
+    const threshold = 200; // When you scroll 200px down, the button fades in
 
-main {
-  padding: 40px 20px;
-  text-align: center;
-}
+    if (scrollPosition >= threshold) {
+        button.classList.add('visible');
+    } else {
+        button.classList.remove('visible');
+    }
+});
 
-section {
-  margin-bottom: 40px;
-}
-
-section h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-button {
-  background-color: #ff6347;
-  color: white;
-  font-size: 1.2em;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #e5533a;
-}
-
-footer {
-  background-color: #1a1a1a;
-  color: #bbb;
-  padding: 20px;
-  text-align: center;
-}
-
-
-// script.js
-
-function showMessage() {
-  alert("Thank you for your interest in Alfredo TV! Stay tuned for more!");
-}
-  </body>
-</html>
+          </head>
+<body>
+          
