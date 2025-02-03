@@ -10,7 +10,10 @@
     <div class="container">
         <h1 class="heading">Alfredo TV</h1>
         <p class="description">Pasirinkite kanalą ir mėgaukitės!</p>
-        <button class="subscribe-btn">Prenum
+        <button class="subscribe-btn">Prenumeruoti</button>
+    </div>
+
+    <script src="script.js"></script>
 /* Global styles */
 body {
     margin: 0;
@@ -50,11 +53,12 @@ body {
     transition: opacity 0.8s ease-in-out;
 }
 
+/* Button becomes visible when the class "visible" is added */
 .subscribe-btn.visible {
-    opacity: 1; /* Visible when scroll down */
+    opacity: 1; 
 }
 
-/* Animation when scrolling */
+/* Optional: Smooth FadeIn effect for button */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -63,8 +67,7 @@ body {
         opacity: 1;
     }
 }
-
-          // This script makes the button appear when scrolling down
+// This script makes the button appear when scrolling down
 window.addEventListener('scroll', function() {
     const button = document.querySelector('.subscribe-btn');
     const scrollPosition = window.scrollY;
@@ -76,7 +79,5 @@ window.addEventListener('scroll', function() {
         button.classList.remove('visible');
     }
 });
-
-          </head>
-<body>
-          
+</body>
+</html>
